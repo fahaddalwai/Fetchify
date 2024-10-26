@@ -17,15 +17,16 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         val view = binding.root
+        setContentView(view)
 
-        setContentView(R.layout.activity_main)
-
+        // Binding ViewModel and Lifecycle Owner
         binding.viewModel = viewModel
         binding.lifecycleOwner = this
 
-        // Observe the state from the ViewModel to display word info
-        viewModel.state.observe(this) {
-            binding.textView.text = viewModel.state.toString() // Display word information
+        // Observe the state from the ViewModel to display list info
+        viewModel.state.observe(this) { state ->
+            // Directly display the entire state, which includes success data
+            binding.textView.text = state.toString() // Display the state as it is
         }
 
         // Observe the loading state to show/hide the progress bar
@@ -33,8 +34,7 @@ class MainActivity : AppCompatActivity() {
             binding.progressBar.isVisible = isLoading
         }
 
-        // Call to fetch all word info when the activity is created
+        // Call to fetch all list info when the activity is created
         viewModel.fetchListInfo()
-
     }
 }

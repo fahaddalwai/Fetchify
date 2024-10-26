@@ -43,10 +43,11 @@ object ListInfoModule {
     fun provideListInfoDatabase(app: Application): ListInfoDatabase {
         return Room.databaseBuilder(
             app, ListInfoDatabase::class.java, "listDatabase"
-        ).addTypeConverter(Converters(GsonParser(Gson())))
+        )
             .fallbackToDestructiveMigration()
             .build()
     }
+
 
     @Provides
     @Singleton
