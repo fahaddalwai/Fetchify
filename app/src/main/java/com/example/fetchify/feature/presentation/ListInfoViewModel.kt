@@ -67,4 +67,8 @@ class ListInfoViewModel @Inject constructor(
                 }.launchIn(this)
         }
     }
+
+    init {
+        fetchListInfo()
+    }
 }
