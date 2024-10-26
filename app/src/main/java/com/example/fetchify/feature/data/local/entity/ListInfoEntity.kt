@@ -2,6 +2,7 @@ package com.example.fetchify.feature.data.local.entity
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import com.example.fetchify.feature.domain.model.ListInfo
 
 @Entity
 data class ListInfoEntity(

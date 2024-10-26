@@ -1,8 +1,7 @@
-package com.example.dictionaryapp.feature.data.remote.dto
+package com.example.fetchify.feature.data.remote.dto
 
-import com.example.dictionaryapp.feature.data.local.entity.ListInfoEntity
-import com.example.dictionaryapp.feature.domain.model.ListInfo
 import com.example.fetchify.feature.data.local.entity.ListInfoEntity
+import com.example.fetchify.feature.domain.model.ListInfo
 
 data class ListInfoDto(
     val listId: Int,

@@ -17,6 +17,6 @@ interface ListInfoDao {
     suspend fun deleteListInfos(ids: List<Int>)
 
     @Query("SELECT * FROM listinfoentity WHERE name LIKE '%' || :name || '%'")
-    suspend fun getListInfos(name: String): List<ListInfoEntity>
+    suspend fun getListInfos(name: Int): List<ListInfoEntity>
 
 }

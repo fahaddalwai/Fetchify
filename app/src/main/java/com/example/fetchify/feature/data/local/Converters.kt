@@ -3,6 +3,7 @@ package com.example.fetchify.feature.data.local
 import androidx.room.ProvidedTypeConverter
 import androidx.room.TypeConverter
 import com.example.fetchify.feature.data.util.JsonParser
+import com.example.fetchify.feature.domain.model.ListInfo
 import com.google.gson.reflect.TypeToken
 
 @ProvidedTypeConverter

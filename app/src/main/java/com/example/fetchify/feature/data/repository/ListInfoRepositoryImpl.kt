@@ -3,6 +3,8 @@ package com.example.fetchify.feature.data.repository
 import com.example.fetchify.core.util.Resource
 import com.example.fetchify.feature.data.local.ListInfoDao
 import com.example.fetchify.feature.data.remote.ListInfoApi
+import com.example.fetchify.feature.domain.model.ListInfo
+import com.example.fetchify.feature.domain.repository.ListInfoRepository
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import retrofit2.HttpException
@@ -13,16 +15,16 @@ class ListInfoRepositoryImpl(
     private val dao: ListInfoDao
 ) : ListInfoRepository {
 
-    override fun getListInfo(itemId: String): Flow<Resource<List<ListInfo>>> = flow {
+    override fun getListInfo(listId: Int): Flow<Resource<List<ListInfo>>> = flow {
         emit(Resource.Loading())
 
         // Fetch cached list info from the local database
-        val cachedListInfo = dao.getListInfos(itemId).map { it.toListInfo() }
+        val cachedListInfo = dao.getListInfos(listId).map { it.toListInfo() }
         emit(Resource.Loading(data = cachedListInfo))
 
         try {
             // Fetch fresh list info from the remote API
-            val remoteListInfo = api.getListInfo(itemId)
+            val remoteListInfo = api.getListInfo() // No parameter needed
             dao.deleteListInfos(remoteListInfo.map { it.id }) // Clear outdated items
             dao.insertListInfos(remoteListInfo.map { it.toListInfoEntity() }) // Insert new items
         } catch (e: HttpException) {
@@ -38,7 +40,7 @@ class ListInfoRepositoryImpl(
         }
 
         // Emit the updated list of items from the local database
-        val newListInfo = dao.getListInfos(itemId).map { it.toListInfo() }
+        val newListInfo = dao.getListInfos(listId).map { it.toListInfo() }
         emit(Resource.Success(newListInfo))
     }
 }
