@@ -2,7 +2,7 @@ package com.example.fetchify.feature.di
 
 import android.app.Application
 import androidx.room.Room
-import com.example.dictionaryapp.feature.data.local.ListInfoDatabase
+import com.example.fetchify.feature.data.local.ListInfoDatabase
 import com.example.fetchify.feature.data.local.Converters
 import com.example.fetchify.feature.data.remote.ListInfoApi
 import com.example.fetchify.feature.data.remote.ListInfoApi.Companion.BASE_URL

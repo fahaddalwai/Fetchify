@@ -1,4 +1,4 @@
-package com.example.dictionaryapp.feature.data.local
+package com.example.fetchify.feature.data.local
 
 import androidx.room.Database
 import androidx.room.RoomDatabase
