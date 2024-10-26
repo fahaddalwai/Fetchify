@@ -9,6 +9,7 @@ import com.example.fetchify.feature.data.remote.ListInfoApi.Companion.BASE_URL
 import com.example.fetchify.feature.data.repository.ListInfoRepositoryImpl
 import com.example.fetchify.feature.data.util.GsonParser
 import com.example.fetchify.feature.domain.repository.ListInfoRepository
+import com.example.fetchify.feature.domain.use_case.GetListInfo
 import com.google.gson.Gson
 import dagger.Module
 import dagger.Provides

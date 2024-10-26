@@ -5,5 +5,5 @@ import com.example.fetchify.feature.domain.model.ListInfo
 import kotlinx.coroutines.flow.Flow
 
 interface ListInfoRepository {
-    fun getListInfo(listId: Int): Flow<Resource<List<ListInfo>>>
+    fun getListInfo(): Flow<Resource<List<ListInfo>>>
 }

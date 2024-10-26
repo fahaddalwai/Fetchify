@@ -13,10 +13,10 @@ interface ListInfoDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertListInfos(infos: List<ListInfoEntity>)
 
-    @Query("DELETE FROM listinfoentity WHERE id IN(:ids)")
-    suspend fun deleteListInfos(ids: List<Int>)
+    @Query("DELETE FROM listinfoentity")
+    suspend fun deleteListInfos()
 
-    @Query("SELECT * FROM listinfoentity WHERE name LIKE '%' || :name || '%'")
-    suspend fun getListInfos(name: Int): List<ListInfoEntity>
+    @Query("SELECT * FROM listinfoentity")
+    suspend fun getListInfos(): List<ListInfoEntity>
 
 }
