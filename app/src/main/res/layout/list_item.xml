@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
+
     <data>
         <variable
             name="listItem"
@@ -11,53 +12,62 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
-        app:cardElevation="4dp"
-        app:cardCornerRadius="8dp"
-        android:padding="8dp"
-        android:background="@android:color/white">
+        app:cardElevation="6dp"
+        app:cardCornerRadius="12dp"
+        android:padding="16dp"
+        android:background="@color/fetch_card_background"
+        >
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
+            android:layout_height="wrap_content"
+            android:padding="4dp"
+            android:background="@color/fetch_card_background">
             <!-- ID Field -->
             <TextView
                 android:id="@+id/itemId"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text='@{"ID: " + String.valueOf(listItem.id)}'
-                android:textSize="14sp"
+                android:text='@{"ID: " + listItem.id}'
+                android:textSize="20sp"
                 android:textColor="@android:color/black"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                android:padding="4dp" />
+                android:padding="8dp"
+                android:fontFamily="sans-serif" />
 
             <!-- List ID Field -->
             <TextView
                 android:id="@+id/itemListId"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text='@{"List ID: " + String.valueOf(listItem.listId)}'
-                android:textSize="14sp"
+                android:text='@{"List ID: " + listItem.listId}'
+                android:textSize="20sp"
                 android:textColor="@android:color/black"
                 app:layout_constraintTop_toBottomOf="@id/itemId"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                android:padding="4dp" />
+                android:padding="8dp"
+                android:fontFamily="sans-serif" />
 
             <!-- Name Field -->
             <TextView
                 android:id="@+id/itemName"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="4dp"
+                android:fontFamily="sans-serif"
                 android:text='@{"Name: " + (listItem.name != null ? listItem.name : "Unknown")}'
-                android:textSize="14sp"
                 android:textColor="@android:color/black"
-                app:layout_constraintTop_toBottomOf="@id/itemListId"
-                app:layout_constraintStart_toStartOf="parent"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                android:padding="4dp" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/itemListId" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

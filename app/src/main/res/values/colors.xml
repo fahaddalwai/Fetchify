@@ -7,4 +7,10 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="fetch_primary">#FFB748</color>    <!-- Warm Gold -->
+    <color name="fetch_secondary">#300D38</color>  <!-- Dark Purple -->
+    <color name="fetch_accent">#781E6C</color>      <!-- Deep Magenta -->
+    <color name="fetch_background">#FFFFFF</color>   <!-- White Background -->
+    <color name="fetch_card_background">#FFB748</color> <!-- Card Background -->
+    <color name="fetch_text_color">#300D38</color>  <!-- Text Color for Card -->
 </resources>
